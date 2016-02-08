@@ -1,8 +1,5 @@
 import java.util.*;
 
-/**
- * Created by sceli on 2/5/16.
- */
 public class StackOfHobbit {
 
     private LinkedHashMap<Integer, String> bagThings;
@@ -14,12 +11,12 @@ public class StackOfHobbit {
     }
 
     public LinkedHashMap<Integer, String> addThingsToStack() {
-        bagThings.put(new Integer(1), "One Ring");
-        bagThings.put(new Integer(2), "Lemba");
-        bagThings.put(new Integer(3), "Elven Cloack");
-        bagThings.put(new Integer(4), "Elven Rope");
-        bagThings.put(new Integer(5), "Phial of Galadriel");
-        bagThings.put(new Integer(6), "Mallorns nut");
+        bagThings.put(1, "One Ring");
+        bagThings.put(2, "Lemba");
+        bagThings.put(3, "Elven Cloack");
+        bagThings.put(4, "Elven Rope");
+        bagThings.put(5, "Phial of Galadriel");
+        bagThings.put(6, "Mallorns nut");
         return bagThings;
     }
 
@@ -40,10 +37,14 @@ public class StackOfHobbit {
     //assuring a "second" randomess
     public LinkedHashMap<Integer, String> getOneRandomizeThing() {
         Set set = bagThings.entrySet();
-        Iterator i = set.iterator();
-        while (i.hasNext()) {
-            Map.Entry<Integer, String> me = (Map.Entry<Integer, String>)i.next();
-            System.out.print(me.getKey() + ": " + me.getValue());
+        for (Iterator i = set.iterator(); i.hasNext();) {
+            Map.Entry<Integer, String> me = (Map.Entry<Integer, String>) i.next();
+            System.out.println(me.getValue());
+            if (me.getValue().equals("One Ring")) {
+                System.out.println("Sauron got the ring. Middle Earth is doomed and you die.");
+            } else {
+                System.out.println("Therefore, Sauron dies.");
+            }
             break;
         }
         return bagThings;
