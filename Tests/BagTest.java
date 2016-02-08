@@ -2,9 +2,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by sceli on 2/5/16.
- */
 public class BagTest {
 
     private String size = "big";
@@ -30,7 +27,10 @@ public class BagTest {
         assertNotNull(frodosBag.addElements());
     }
 
-    //    Bag frodoBag = new Bag();
+    @Test
+    public void shouldReturnOneObject() {
+        Bag frodosBag = new Bag(size, color);
+        assertNotNull(frodosBag.pullOneObject());
+    }
 
-    //}
 }
