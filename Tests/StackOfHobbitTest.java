@@ -1,13 +1,8 @@
 import org.junit.Test;
-
-import java.lang.reflect.Array;
 import java.util.*;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by sceli on 2/5/16.
- */
 public class StackOfHobbitTest {
 
     LinkedHashMap<Integer, String> bagThingsTest = new LinkedHashMap<>();
@@ -51,7 +46,7 @@ public class StackOfHobbitTest {
         frodosStack.addThingsToStack();
         frodosStack.getKeys();
         frodosStack.randomizeStack();
-        assertTrue(bagThingsTest.get(1) == "One Ring");
+        assertTrue(bagThingsTest.get(1).equals("One Ring"));
     }
 
     @Test
