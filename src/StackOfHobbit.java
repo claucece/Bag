@@ -4,6 +4,7 @@ public class StackOfHobbit {
 
     private LinkedHashMap<Integer, String> bagThings;
     private ArrayList<String> keys;
+    String value;
 
     public StackOfHobbit(LinkedHashMap<Integer, String> bagThings, ArrayList<String> keys) {
         this.bagThings = bagThings;
@@ -34,19 +35,34 @@ public class StackOfHobbit {
         return bagThings;
     }
 
-    //assuring a "second" randomess
     public LinkedHashMap<Integer, String> getOneRandomizeThing() {
-        Set set = bagThings.entrySet();
-        for (Iterator i = set.iterator(); i.hasNext();) {
-            Map.Entry<Integer, String> me = (Map.Entry<Integer, String>) i.next();
-            System.out.println(me.getValue());
-            if (me.getValue().equals("One Ring")) {
-                System.out.println("Sauron got the ring. Middle Earth is doomed and you die.");
-            } else {
-                System.out.println("Therefore, Sauron dies.");
-            }
-            break;
-        }
+                bagThings.entrySet().stream()
+                .filter(e -> {
+                            if (e.getKey() <= 1) {
+                                String value = e.getValue();
+                                System.out.println(value);
+                                if (value.equals("One Ring")) {
+                                    System.out.println("Sauron got the ring. Middle Earth is doomed and you die.");
+                                } else {
+                                    System.out.println("Therefore, Sauron dies.");
+                                }
+                                return false;
+                            } else {
+                                return true;
+                            }
+                        })
+                        .findAny();
+        //Set set = bagThings.entrySet();
+        //for (Iterator i = set.iterator(); i.hasNext();) {
+            //Map.Entry<Integer, String> me = (Map.Entry<Integer, String>) i.next();
+            //System.out.println(me.getValue());
+            //if (me.getValue().equals("One Ring")) {
+            //    System.out.println("Sauron got the ring. Middle Earth is doomed and you die.");
+            //} else {
+            //    System.out.println("Therefore, Sauron dies.");
+            //}
+            //break;
+        //}
         return bagThings;
     }
 }
