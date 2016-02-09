@@ -15,6 +15,7 @@ public class BagLauncher {
         Bag frodosBag = new Bag("big", "brown");
         System.out.println("The hobbit bag that Sauron is holding is " +
                 frodosBag.getColor() + " and its " + frodosBag.getSize() + ".");
-        frodosBag.pullOneObject();
+        frodosBag.initializeStack();
+
     }
 }
