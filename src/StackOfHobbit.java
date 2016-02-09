@@ -3,12 +3,11 @@ import java.util.*;
 public class StackOfHobbit {
 
     private LinkedHashMap<Integer, String> bagThings;
-    private ArrayList<String> keys;
-    String value;
+    private ArrayList<String> value;
 
-    public StackOfHobbit(LinkedHashMap<Integer, String> bagThings, ArrayList<String> keys) {
+    public StackOfHobbit(LinkedHashMap<Integer, String> bagThings, ArrayList<String> value) {
         this.bagThings = bagThings;
-        this.keys = keys;
+        this.value = value;
     }
 
     public LinkedHashMap<Integer, String> addThingsToStack() {
@@ -21,14 +20,14 @@ public class StackOfHobbit {
         return bagThings;
     }
 
-    public ArrayList<String> getKeys() {
-        keys = new ArrayList<>(bagThings.values());
-        return keys;
+    public ArrayList<String> getValues() {
+        value = new ArrayList<>(bagThings.values());
+        return value;
     }
 
     public LinkedHashMap randomizeStack() {
-        Collections.shuffle(keys);
-        Iterator<String> iter = keys.iterator();
+        Collections.shuffle(value);
+        Iterator<String> iter = value.iterator();
         for (Integer k : bagThings.keySet()) {
             bagThings.put(k, iter.next());
         }
