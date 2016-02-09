@@ -24,7 +24,7 @@ public class Bag {
 
     public LinkedHashMap<Integer, String> initializeStack() {
         frodosStack.addThingsToStack();
-        frodosStack.getKeys();
+        frodosStack.getValues();
         frodosStack.randomizeStack();
         System.out.println("Sauron opens the bag and grabs: ");
         frodosStack.getOneRandomizeThing();
