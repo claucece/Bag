@@ -10,6 +10,8 @@ public class Bag {
     StackOfHobbit frodosStack = new StackOfHobbit(bagThingsFrodo,keysFrodo);
 
     public Bag (String size, String color) {
+        if (size == null || color == null)
+            throw new NullPointerException();
         this.size = size;
         this.color = color;
     }
