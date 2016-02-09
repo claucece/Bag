@@ -33,7 +33,7 @@ public class StackOfHobbitTest {
     public void shoulBeConvertedIntoArray() {
         StackOfHobbit frodosStack = new StackOfHobbit(bagThingsTest,keysTest);
         ArrayList<Integer> keysTest = new ArrayList<>();
-        assertTrue(frodosStack.getKeys() instanceof ArrayList);
+        assertTrue(frodosStack.getValues() instanceof ArrayList);
     }
 
     // this Test HAS to fail sometimes. If a it never fails, then it
@@ -44,17 +44,27 @@ public class StackOfHobbitTest {
     public void shouldBeRandomized() {
         StackOfHobbit frodosStack = new StackOfHobbit(bagThingsTest,keysTest);
         frodosStack.addThingsToStack();
-        frodosStack.getKeys();
+        frodosStack.getValues();
         frodosStack.randomizeStack();
         assertTrue(bagThingsTest.get(1).equals("One Ring"));
     }
 
     @Test
-    public void shouldReturnOneRandomizedThig() {
+    public void shouldReturnOneRandomizedThing() {
         StackOfHobbit frodosStack = new StackOfHobbit(bagThingsTest,keysTest);
         frodosStack.addThingsToStack();
-        frodosStack.getKeys();
+        frodosStack.getValues();
         frodosStack.randomizeStack();
         assertNotNull(frodosStack.getOneRandomizeThing());
     }
+
+    @Test
+    public void shouldPrintElementInLambda() {
+        StackOfHobbit frodosStack = new StackOfHobbit(bagThingsTest,keysTest);
+        frodosStack.addThingsToStack();
+        frodosStack.getValues();
+        frodosStack.randomizeStack();
+        frodosStack.getOneRandomizeThing();
+    }
+
 }
