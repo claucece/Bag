@@ -27,9 +27,12 @@ public class StackOfHobbit {
 
     public LinkedHashMap randomizeStack() {
         Collections.shuffle(value);
-        Iterator<String> iter = value.iterator();
-        for (Integer k : bagThings.keySet()) {
-            bagThings.put(k, iter.next());
+        //Iterator<String> iter = value.iterator();
+        for (String iter : value) {
+            for (Integer k : bagThings.keySet()) {
+                //bagThings.put(k, iter.next());
+                bagThings.put(k, iter);
+            }
         }
         return bagThings;
     }
