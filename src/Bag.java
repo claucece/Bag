@@ -3,10 +3,11 @@ import java.util.LinkedHashMap;
 
 public class Bag {
 
-    private String size = "big";
-    private String color = "brown";
+    private String size;
+    private String color;
     private LinkedHashMap<Integer, String> bagThingsFrodo = new LinkedHashMap<>();
     private ArrayList<String> keysFrodo = new ArrayList<>();
+    StackOfHobbit frodosStack = new StackOfHobbit(bagThingsFrodo,keysFrodo);
 
     public Bag (String size, String color) {
         this.size = size;
@@ -21,18 +22,13 @@ public class Bag {
         return color;
     }
 
-    public Object addElements() {
-        StackOfHobbit frodosStack = new StackOfHobbit(bagThingsFrodo,keysFrodo);
-        return frodosStack;
-    }
-
-    public LinkedHashMap<Integer, String> pullOneObject() {
-        StackOfHobbit frodosStack = new StackOfHobbit(bagThingsFrodo,keysFrodo);
+    public LinkedHashMap<Integer, String> initializeStack() {
         frodosStack.addThingsToStack();
         frodosStack.getKeys();
         frodosStack.randomizeStack();
-        System.out.println("Sauron open the bag and grabs: ");
+        System.out.println("Sauron opens the bag and grabs: ");
         frodosStack.getOneRandomizeThing();
         return bagThingsFrodo;
     }
+
 }
