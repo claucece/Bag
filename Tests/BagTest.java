@@ -10,27 +10,20 @@ public class BagTest {
     @Test
     public void shouldHaveSize () {
         Bag frodosBag = new Bag(size, color);
-        assertTrue(frodosBag.getSize().equals("big"));
+        assertTrue(frodosBag.getSize().equals(size));
     }
 
     @Test
     public void shouldHaveColor() {
         Bag frodosBag = new Bag(size, color);
-        assertTrue(frodosBag.getColor().equals("brown"));
+        assertTrue(frodosBag.getColor().equals(color));
 
     }
 
     @Test
     public void shouldBagNotBeEmpty() {
         Bag frodosBag = new Bag(size, color);
-        frodosBag.addElements();
-        assertNotNull(frodosBag.addElements());
-    }
-
-    @Test
-    public void shouldReturnOneObject() {
-        Bag frodosBag = new Bag(size, color);
-        assertNotNull(frodosBag.pullOneObject());
+        assertNotNull(frodosBag.initializeStack());
     }
 
 }
