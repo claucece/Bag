@@ -4,6 +4,7 @@ public class StackOfHobbit {
 
     private LinkedHashMap<Integer, String> bagThings;
     private ArrayList<String> value;
+    String values;
 
     public StackOfHobbit(LinkedHashMap<Integer, String> bagThings, ArrayList<String> value) {
         this.bagThings = bagThings;
@@ -41,13 +42,9 @@ public class StackOfHobbit {
                 bagThings.entrySet().stream()
                 .filter(e -> {
                             if (e.getKey() <= 1) {
-                                String value = e.getValue();
-                                System.out.println(value);
-                                if (value.equals("One Ring")) {
-                                    System.out.println("Sauron got the ring. Middle Earth is doomed and you die.");
-                                } else {
-                                    System.out.println("Therefore, Sauron dies.");
-                                }
+                                values = e.getValue();
+                                System.out.println(values);
+                                defineSauronOutcome();
                                 return false;
                             } else {
                                 return true;
@@ -66,5 +63,14 @@ public class StackOfHobbit {
             //break;
         //}
         return bagThings;
+    }
+
+    public String defineSauronOutcome() {
+        if (values.equals("One Ring")) {
+            System.out.println("Sauron got the ring. Middle Earth is doomed and you die.");
+        } else {
+            System.out.println("Therefore, Sauron dies.");
+        }
+        return values;
     }
 }
